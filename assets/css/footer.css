@@ -1,0 +1,87 @@
+.main-footer {
+    background: linear-gradient(135deg, #0e0e0e, #1e1e1e);
+    color: #fff;
+    padding: 60px 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+.footer-info,
+.footer-links,
+.footer-rights {
+    flex: 1 1 300px;
+}
+.footer-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+.footer-info p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.footer-contacts p,
+.footer-contacts a {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 6px;
+    color: #ccc;
+    text-decoration: none;
+}
+.footer-contacts a:hover {
+    color: #fff;
+}
+.footer-links h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li {
+    margin-bottom: 8px;
+}
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+}
+.footer-links a::after {
+    content: ' →';
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+.footer-links a:hover::after {
+    opacity: 1;
+    transform: translateX(5px);
+}
+.footer-rights {
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-rights {
+        text-align: left;
+    }
+    .footer-info,
+    .footer-links,
+    .footer-rights {
+        flex: unset;
+    }
+}

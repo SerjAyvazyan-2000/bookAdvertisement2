@@ -1,0 +1,245 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.logo p{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #e6c200;
+}
+
+.header-contacts {
+    display: flex;
+    gap: 20px;
+    font-size: 0.95rem;
+}
+
+.header-contacts a {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.callback-btn {
+    background: #ffd700;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.callback-btn:hover {
+    background: #e6c200;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.burger span {
+    width: 26px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+    transform-origin: center;
+}
+
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav.open {
+    flex-direction: column;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 100vh;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+.nav.open ul {
+    flex-direction: column;
+    gap: 18px;
+}
+
+@media (max-width: 997px) {
+    .nav {
+        position: fixed;
+        top: -100%;
+        transition: all 0.3s ease;
+
+    }
+
+    .burger {
+        display: flex;
+    }
+
+
+
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.modal-overlay.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+.modal-box p{
+    margin-top: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.callback-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.callback-form span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.callback-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.callback-form button {
+    background: #ffd700;
+    border: none;
+    padding: 12px 22px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.callback-form button:hover {
+    background: #e6c200;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@media (max-width: 567px) {
+    .logo p{
+       display: none;
+    }
+}
